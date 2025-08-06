@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import ThemeToggle from '../../../components/ThemeToggle';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,7 +35,7 @@ export default function Header() {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white shadow-lg backdrop-blur-sm bg-opacity-95' 
+          ? 'bg-white dark:bg-gray-900 shadow-lg backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95' 
           : 'bg-transparent'
       }`}
     >
@@ -47,7 +48,7 @@ export default function Header() {
           >
             <h1 
               className={`text-2xl font-bold transition-colors duration-300 ${
-                isScrolled ? 'text-gray-900' : 'text-white'
+                isScrolled ? 'text-gray-900 dark:text-white' : 'text-white'
               }`}
               style={{ fontFamily: '"Pacifico", serif' }}
             >
@@ -63,7 +64,7 @@ export default function Header() {
                 onClick={() => scrollToSection(item.id)}
                 className={`font-semibold transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer ${
                   isScrolled 
-                    ? 'text-gray-700 hover:text-blue-600' 
+                    ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400' 
                     : 'text-white hover:text-blue-300'
                 }`}
               >
@@ -72,14 +73,21 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Theme Toggle and CTA Button */}
+          <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle 
+              className={`${
+                isScrolled 
+                  ? 'bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700' 
+                  : 'bg-white/20 hover:bg-white/30 backdrop-blur-sm'
+              }`}
+            />
             <button
               onClick={() => scrollToSection('contact')}
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer ${
                 isScrolled
                   ? 'bg-blue-600 text-white hover:bg-blue-700'
-                  : 'bg-white text-gray-900 hover:bg-gray-100'
+                  : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
               }`}
             >
               Get In Touch
@@ -90,7 +98,7 @@ export default function Header() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden w-10 h-10 flex items-center justify-center cursor-pointer ${
-              isScrolled ? 'text-gray-900' : 'text-white'
+              isScrolled ? 'text-gray-900 dark:text-white' : 'text-white'
             }`}
           >
             <i className={`text-2xl ${isMobileMenuOpen ? 'ri-close-line' : 'ri-menu-line'}`}></i>
@@ -99,21 +107,22 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-lg border-t dark:border-gray-700">
             <nav className="flex flex-col py-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-left px-6 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-semibold transition-colors duration-200 cursor-pointer"
+                  className="text-left px-6 py-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 font-semibold transition-colors duration-200 cursor-pointer"
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="px-6 py-3">
+              <div className="px-6 py-3 flex items-center justify-between">
+                <ThemeToggle className="bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700" />
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors duration-200 whitespace-nowrap cursor-pointer"
+                  className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors duration-200 whitespace-nowrap cursor-pointer"
                 >
                   Get In Touch
                 </button>

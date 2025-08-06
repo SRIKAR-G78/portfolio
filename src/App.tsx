@@ -1,12 +1,14 @@
 import { BrowserRouter } from 'react-router-dom'
 import { AppRoutes } from './router'
-
+import { ThemeProvider } from './context/ThemeContext'
 
 function App() {
   return (
-    <BrowserRouter basename={__BASE_PATH__}>
-      <AppRoutes />
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter basename={__BASE_PATH__}>
+        <AppRoutes />
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 

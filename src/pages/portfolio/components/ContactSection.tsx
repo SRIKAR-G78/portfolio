@@ -71,14 +71,14 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Get In Touch
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you. 
             Let's create something amazing together!
           </p>
@@ -86,13 +86,13 @@ export default function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Form */}
-          <div className="bg-gray-50 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Message</h3>
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send Message</h3>
             
             <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                     Full Name
                   </label>
                   <input
@@ -102,13 +102,13 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                     placeholder="Your full name"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                     Email Address
                   </label>
                   <input
@@ -118,14 +118,14 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
               
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                   Subject
                 </label>
                 <input
@@ -135,13 +135,13 @@ export default function ContactSection() {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                   placeholder="What's this about?"
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                   Message
                 </label>
                 <textarea
@@ -152,10 +152,10 @@ export default function ContactSection() {
                   required
                   maxLength={500}
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm resize-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                   placeholder="Tell me about your project or inquiry..."
                 ></textarea>
-                <div className="text-right text-sm text-gray-500 mt-1">
+                <div className="text-right text-sm text-gray-500 dark:text-gray-400 mt-1">
                   {formData.message.length}/500 characters
                 </div>
               </div>
@@ -198,7 +198,7 @@ export default function ContactSection() {
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Contact Information</h3>
             
             <div className="space-y-6 mb-8">
               {contactInfo.map((info, index) => (
@@ -207,10 +207,10 @@ export default function ContactSection() {
                     <i className={`${info.icon} text-xl text-blue-600`}></i>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">{info.label}</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">{info.label}</h4>
                     <a 
                       href={info.link}
-                      className="text-gray-600 hover:text-blue-600 transition-colors duration-200 cursor-pointer"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 cursor-pointer"
                     >
                       {info.value}
                     </a>
@@ -221,7 +221,7 @@ export default function ContactSection() {
 
             {/* Social Links */}
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4">Follow Me</h4>
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -229,7 +229,7 @@ export default function ContactSection() {
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gray-100 hover:bg-blue-600 rounded-lg flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 cursor-pointer"
+                    className="w-12 h-12 bg-gray-100 dark:bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-white transition-all duration-300 cursor-pointer"
                   >
                     <i className={`${social.icon} text-xl`}></i>
                   </a>
@@ -238,9 +238,9 @@ export default function ContactSection() {
             </div>
 
             {/* Office Hours */}
-            <div className="mt-8 p-6 bg-blue-50 rounded-xl">
-              <h4 className="font-semibold text-gray-900 mb-3">Office Hours</h4>
-              <div className="space-y-2 text-gray-600">
+            <div className="mt-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Office Hours</h4>
+              <div className="space-y-2 text-gray-600 dark:text-gray-300">
                 <div className="flex justify-between">
                   <span>Monday - Friday</span>
                   <span>9:00 AM - 6:00 PM IST</span>
