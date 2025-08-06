@@ -1,30 +1,34 @@
 
 export default function SkillsSection() {
   const frontendSkills = [
+    { name: 'HTML5', level: 98, icon: 'ri-html5-line' },
+    { name: 'CSS', level: 92, icon: 'ri-code-line' },
+    { name: 'Bootstrap', level: 90, icon: 'ri-code-line' },
+    { name: 'Tailwind CSS', level: 92, icon: 'ri-css3-line' },
+    { name: 'JavaScript', level: 95, icon: 'ri-code-line' },
     { name: 'React', level: 95, icon: 'ri-reactjs-line' },
     { name: 'TypeScript', level: 90, icon: 'ri-code-s-slash-line' },
-    { name: 'Next.js', level: 88, icon: 'ri-arrow-right-circle-line' },
-    { name: 'Tailwind CSS', level: 92, icon: 'ri-css3-line' },
-    { name: 'Vue.js', level: 85, icon: 'ri-vuejs-line' },
-    { name: 'HTML5', level: 98, icon: 'ri-html5-line' }
+    {name:'vite', level: 85, icon: 'ri-code-line'},
+    { name:'Angular', level: 85, icon: 'ri-code-line' },
   ];
 
   const backendSkills = [
     { name: 'Node.js', level: 90, icon: 'ri-nodejs-line' },
+    { name: 'Express', level: 80, icon: 'ri-code-line' },
     { name: 'Python', level: 88, icon: 'ri-code-line' },
     { name: 'MongoDB', level: 85, icon: 'ri-database-2-line' },
-    { name: 'PostgreSQL', level: 87, icon: 'ri-database-line' },
-    { name: 'GraphQL', level: 82, icon: 'ri-share-circle-line' },
-    { name: 'Docker', level: 78, icon: 'ri-container-line' }
+    {name:'MySQL', level: 80, icon: 'ri-code-line'},
+    {name:'postman', level: 80, icon: 'ri-code-line'},
+    { name: 'Django', level: 75, icon: 'ri-code-line' },
   ];
 
   const tools = [
     { name: 'Git', icon: 'ri-git-branch-line' },
     { name: 'VS Code', icon: 'ri-code-box-line' },
-    { name: 'Figma', icon: 'ri-pencil-ruler-2-line' },
+    // { name: 'Figma', icon: 'ri-pencil-ruler-2-line' },
     { name: 'AWS', icon: 'ri-cloud-line' },
-    { name: 'Webpack', icon: 'ri-settings-3-line' },
-    { name: 'Jest', icon: 'ri-test-tube-line' }
+    // { name: 'Webpack', icon: 'ri-settings-3-line' },
+    // { name: 'Jest', icon: 'ri-test-tube-line' }
   ];
 
   return (
@@ -111,7 +115,7 @@ export default function SkillsSection() {
           <h3 className="text-2xl font-bold text-gray-900 mb-8">
             Tools & Technologies
           </h3>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-6">
             {tools.map((tool, index) => (
               <div key={index} className="group p-6 bg-gray-50 rounded-xl hover:bg-blue-50 transition-all duration-300 hover:shadow-lg cursor-pointer">
                 <div className="w-12 h-12 flex items-center justify-center mx-auto mb-3">
